@@ -4,6 +4,7 @@ import estiloLogin from './estiloLogin';
 import { AntDesign } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { Entypo } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 
 function Login({ navigation }) {
@@ -29,11 +30,11 @@ function Login({ navigation }) {
     return (
         <View style={estiloLogin.container}>
 
-            <ImageBackground style={estiloLogin.fundo} source={require('../../../assets/imagens/matrix.jpg')}>            
+            <ImageBackground style={estiloLogin.fundo} source={require('../../../assets/imagens/parede.jpg')}>            
 
                 <View style={estiloLogin.logoContainer}>
-                    <LinearGradient colors={['#4c669f', '#3b5998', '#081a31']} style={estiloLogin.logo}>
-                        <AntDesign name="rest" size={40} color='white'/>
+                    <LinearGradient colors={['#FF7F50', '#FFA07A', '#FAEBD7']} style={estiloLogin.logo}>
+                       <Entypo name="book" size={40} color="white" />
                     </LinearGradient> 
                 </View>
 
@@ -58,7 +59,7 @@ function Login({ navigation }) {
                 </View>
 
                 <TouchableOpacity onPress={entrar}>
-                    <LinearGradient colors={['#4c669f', '#192f6a', '#081a31']} style={estiloLogin.botaoLinearGradient}>
+                    <LinearGradient colors={['#FF7F50', '#FFA07A', '#FAEBD7']} style={estiloLogin.botaoLinearGradient}>
                         <MaterialCommunityIcons name="send" size={24} color="white" />                   
                         <Text style={estiloLogin.botaoTexto}> Entrar </Text>
                     </LinearGradient>                

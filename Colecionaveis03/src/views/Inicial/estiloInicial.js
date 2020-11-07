@@ -9,7 +9,7 @@ const estiloInicial = StyleSheet.create({
    header: {
       height: 50,
       width: '100%',
-      backgroundColor: '#081a31',
+      backgroundColor: '#FFD700',
       flexDirection: 'row',
       alignItems: 'flex-end',    
    },
@@ -29,7 +29,7 @@ const estiloInicial = StyleSheet.create({
       alignItems: 'center',
       padding: 10,
       borderWidth: 1,
-      borderColor: '#14417b',
+      borderColor: '#FFD700',
    },
    botaoTexto: {
       fontSize: 22,

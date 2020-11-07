@@ -31,16 +31,16 @@ function Inicial({ navigation }) {
                 </TouchableOpacity>
             </View>
 
-            <ImageBackground style={estiloInicial.fundo} source={require('../../../assets/imagens/aco.jpg')}>
+            <ImageBackground style={estiloInicial.fundo} source={require('../../../assets/imagens/gira.jpg')}>
 
                 <TouchableOpacity onPress={abrirColecao}>
-                    <ImageBackground style={estiloInicial.botaoBackground} source={require('../../../assets/imagens/espaco.jpg')}>
+                    <ImageBackground style={estiloInicial.botaoBackground} source={require('../../../assets/imagens/colecao.jpg')}>
                         <Text style={estiloInicial.botaoTexto}>Coleção</Text>                    
                     </ImageBackground>
                 </TouchableOpacity>
 
                 <TouchableOpacity onPress={abrirItem}>
-                    <ImageBackground style={estiloInicial.botaoBackground} source={require('../../../assets/imagens/ring.jpg')}>
+                    <ImageBackground style={estiloInicial.botaoBackground} source={require('../../../assets/imagens/item.jpg')}>
                         <Text style={estiloInicial.botaoTexto}>Item</Text>                    
                     </ImageBackground>
                 </TouchableOpacity>
