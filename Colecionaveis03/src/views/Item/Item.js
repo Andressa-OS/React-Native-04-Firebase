@@ -5,23 +5,32 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
 import {LinearGradient} from 'expo-linear-gradient';
+import {LivroFB} from '../../firebase/livroFB';
 
 function Item({ navigation, route }) {
 
     const [item, setItem] = useState({});
     const {operacao, setOperacao} = route.params;
 
+    const livroFb = new LivroFB();
+
     useEffect(() => {
-        setItem(route.params ? route.params : {});
-    }, [route.params]);
+        setItem(route.params.item);
+    }, [route.params.item]);
 
     const voltar = () => {
         navigation.navigate('Colecao')
     }
 
-    const salvar = () => { }
+    const salvar = (item) => { 
+        operacao == 'adicionar' ? livroFb.adicionarLivro(item) : livroFb.editarLivro(item);
+        voltar();
+    }
 
-    const remover = () => { }
+    const remover = (item) => { 
+        livroFb.removerLivro(item);
+        voltar();
+    }
     
     return (
         <View style={estiloItem.container}>
@@ -89,13 +98,13 @@ function Item({ navigation, route }) {
 
             <View style={estiloItem.botoesContainer}>
 
-                <TouchableOpacity onPress={salvar} style={estiloItem.botaoContainer}>
+                <TouchableOpacity onPress={() => salvar(item)} style={estiloItem.botaoContainer}>
                     <LinearGradient colors={['#FF7F50', '#FFA07A', '#FAEBD7']} style={estiloItem.botao}>
                         <MaterialIcons name="save" size={28} color="white" />
                     </LinearGradient>
                 </TouchableOpacity>
 
-                <TouchableOpacity onPress={remover} style={estiloItem.botaoContainer}>
+                <TouchableOpacity onPress={() => remover(item)} style={estiloItem.botaoContainer}>
                     <LinearGradient colors={['#FF7F50', '#FFA07A', '#FAEBD7']} style={estiloItem.botao}>
                         <MaterialIcons name="delete-forever" size={24} color="white" />
                     </LinearGradient>
